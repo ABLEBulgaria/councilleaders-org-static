@@ -1,98 +1,70 @@
-# councilleaders-org-static
+# Council Leaders Static Site (`councilleaders.org`)
+
 This GitHub repository hosts a static HTML version of the Council Leaders website. ABLE's Council Leaders project has been inactive since at least 2020. The councilleaders.org website was a WordPress installation, which as of March 14, 2026, was version 5.4.11 and last updated in 2022. In March 2026, Stoil Stoilov exported a static HTML version of the last working WordPress installation using the WordPress plugin Simply Static, and uploaded it to be hosted forever for free on GitHub Pages.
 
-## How to upload a Simply Static export to GitHub Pages
-
-Hosting a static version of your WordPress website on GitHub Pages using the Simply Static plugin is an excellent way to get fast, free, and secure hosting.
-
-Because the free version of Simply Static does not connect directly to GitHub via API (that is a Pro feature), you will generate the files and push them to your repository manually.
-
-Here is the step-by-step guide on how to do this:
-
-### Phase 1: Set Up Your GitHub Repository
-
-Before generating your static files, you need to know what your final GitHub Pages URL will be.
-
-1. **Create a GitHub Account:** If you don't have one, sign up at github.com.
-2. **Create a New Repository:** * Click the **"+"** icon in the top right and select **New repository**.
-* **Repository name:** If you want your URL to be `https://yourusername.github.io`, name the repository exactly **`yourusername.github.io`**. *(If you name it something else, like `my-site`, your URL will be `https://yourusername.github.io/my-site/`)*.
-* Make the repository **Public**.
-* Check **"Add a README file"** (this initializes the repository so you can upload files later).
-* Click **Create repository**.
-
-
-3. **Enable GitHub Pages:**
-* Inside your new repository, click on the **Settings** tab.
-* On the left sidebar, click on **Pages**.
-* Under "Build and deployment", ensure the Source is set to **Deploy from a branch**.
-* Under the "Branch" section, select **`main`** (or `master`) and save.
-* *Note: It may take a minute, but GitHub will eventually show a message saying "Your site is live at [Your URL]". Copy this URL.*
-
-
+> [!CAUTION]
+> **MAINTENANCE STATUS: DECOMMISSIONED & ARCHIVED** > The original WordPress installation (v5.4.11) used to manage this site has been decommissioned and archived. This repository now serves as the **primary and final source** of the website content.
 
 ---
 
-### Phase 2: Configure Simply Static
+## 🏗 Architecture Overview
 
-Now, go to your WordPress Admin Dashboard to configure the plugin so it formats the website for your new GitHub URL.
+This site follows a **Static-Only** architecture:
 
-1. Go to **Simply Static > Settings**.
-2. **General Tab:**
-* Under **Delivery Method**, select **ZIP Archive**. (This makes it easy to download all your files at once).
-
-
-3. **URL Tab (Crucial Step):**
-* Under **Destination URLs**, select **Absolute URLs**.
-* In the **Absolute URL** field, paste the GitHub Pages URL you copied in Phase 1 (e.g., `https://yourusername.github.io/`).
-* *Why? Simply Static will scan your entire WordPress site and replace your local development URLs with your new GitHub URL so images, CSS, and links work properly.*
-
-
-4. Click **Save Changes**.
+* **Original CMS:** WordPress (v5.4.11) — *Now Offline/Archived*.
+* **Static Converter:** [Simply Static](https://wordpress.org/plugins/simply-static/) (Legacy v2.1.8.2).
+* **Hosting:** [GitHub Pages](https://pages.github.com/).
+* **DNS & Domain:** Cloudflare (pointing to GitHub Pages via A/CNAME records).
 
 ---
 
-### Phase 3: Generate and Download Your Site
+## 🛠 How to Update the Website
 
-1. In the WordPress menu, go to **Simply Static > Generate**.
-2. Click the big **Generate Static Files** button.
-3. The plugin will scan your site. Once it finishes, a link will appear saying **"Click here to download"**.
-4. Download the `.zip` file to your computer and **extract/unzip** it. You should see an `index.html` file along with folders like `wp-content` and `wp-includes`.
+Since the WordPress backend is no longer live, updates cannot be made through a visual editor.
 
----
+### For Minor Text/Link Changes:
 
-### Phase 4: Upload to GitHub
+1. Locate the specific `.html` file in this repository (e.g., `index.html` for the homepage or a subfolder for specific pages).
+2. Edit the HTML code directly via the GitHub web interface or your preferred code editor.
+3. Commit the changes to the `main` branch.
 
-You now need to get these extracted files into your GitHub repository.
+### For Major Structural Changes:
 
-**Method A: Using the Browser (Best for small sites)**
+To use a CMS again, a maintainer would need to:
 
-1. Go to your repository on GitHub.
-2. Click the **Add file** button and select **Upload files**.
-3. Drag and drop all the extracted files and folders (do not upload the `.zip` file itself, upload its *contents*).
-4. Add a commit message (e.g., "Initial site upload") and click **Commit changes**.
-*(Note: GitHub's web interface has a 100-file limit per upload. If your site has more files, use Method B).*
-
-**Method B: Using GitHub Desktop (Recommended for larger sites and updates)**
-
-1. Download and install [GitHub Desktop](https://desktop.github.com/).
-2. Log in with your GitHub account.
-3. Click **File > Clone repository** and select the repository you created in Phase 1.
-4. Open the folder on your computer where GitHub Desktop cloned the repository.
-5. Copy all the extracted files from your Simply Static export and paste them into this cloned folder.
-6. Go back to GitHub Desktop. You will see all your files listed as changes.
-7. Enter a summary (e.g., "v1.0 static export") in the bottom left box and click **Commit to main**.
-8. Click the **Push origin** button at the top to upload the files to GitHub.
+1. Restore the **WordPress Archive** (database and `wp-content` files) to a local environment (e.g., LocalWP or XAMPP).
+2. Perform edits within the local WordPress environment.
+3. Re-run a Simply Static export and push the new files to this repository.
 
 ---
 
-### Phase 5: View Your Live Website
+## ⚙️ Critical Settings
 
-Once your files are pushed to the `main` branch, GitHub Actions will automatically start building your site.
+To maintain the site's live status, do not modify these configurations:
 
-Wait about 1–3 minutes, then visit your GitHub Pages URL (e.g., `https://yourusername.github.io/`). Your static WordPress site should now be live, secure, and loading incredibly fast!
-
-*(Note: Every time you make changes to your WordPress site—like publishing a new blog post—you will need to repeat Phases 3 and 4 to update the live site).*
+* **CNAME File:** The file named `CNAME` in the root must remain. It maps `councilleaders.org` to this repository.
+* **DNS Configuration:** The Cloudflare DNS for `councilleaders.org` is set to **DNS Only** (Grey Cloud) to ensure GitHub Pages can manage the SSL certificate renewal.
+* **Paths:** All internal links are **Absolute**, pointing to `https://councilleaders.org/`.
 
 ---
 
-**Would you like me to explain how to handle contact forms or search functionality, since those typically rely on PHP and break when converted to a static site?**
+## ⚠️ Known Limitations
+
+Because the source CMS is decommissioned:
+
+* **No Dynamic Forms:** Standard WordPress form plugins will not function. Any active forms must use an external handler (e.g., Formspree).
+* **Security:** The site is virtually unhackable because there is no database or PHP execution on the server.
+
+---
+
+## 📁 Archive Information
+
+The original WordPress files and database dump have been securely archived by **Stoil M. Stoilov**. Contact the ABLE if you require the source files to rebuild the site's backend.
+
+---
+
+**Maintained by:** Stoil M. Stoilov and other ABLE IT Team members
+
+**Status:** Archived / Static Mode
+
+**Last Updated:** March 2026
