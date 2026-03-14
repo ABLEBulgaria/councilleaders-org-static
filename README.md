@@ -68,3 +68,14 @@ The original WordPress files and database dump have been securely archived by **
 **Status:** Archived / Static Mode
 
 **Last Updated:** March 2026
+
+---
+
+## License / Copyright
+
+© 2026 Association of the Bulgarian Leaders and Entrepreneurs. All rights reserved.
+
+This project and its contents are proprietary. No part of this repository may be reproduced, distributed, or transmitted in any form or by any means—including copying, modifying, or incorporating into other projects—without the prior written permission of the owner. 
+
+By viewing this repository, you agree to the [GitHub Terms of Service](https://github.com) regarding public repositories.
+
