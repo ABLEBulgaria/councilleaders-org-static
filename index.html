@@ -819,5 +819,126 @@ img.emoji {
 
     
 
+<!-- ABLE Archive Notice Banner -->
+<div id="able-archive-banner" class="able-archive-banner-container">
+  <div class="able-archive-banner-content">
+    <button class="able-archive-close-btn" aria-label="Close banner" title="Close">
+      <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" class="able-archive-close-icon">
+        <path fill="currentColor" d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"/>
+      </svg>
+    </button>
+    <div class="able-archive-text">
+      <p>This is an archived version of the ABLE Council Leaders website. Check <a href="https://able.bg">able.bg</a> for up-to-date information about ABLE projects.<br>Това е архивирана версия на сайта на ABLE Council Leaders. Проверете <a href="https://able.bg">able.bg</a> за актуална информация.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.able-archive-banner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: #D61F1F;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.able-archive-banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.able-archive-close-btn {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  transition: opacity 0.2s;
+}
+
+.able-archive-close-btn:hover {
+  opacity: 0.8;
+}
+
+.able-archive-close-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.able-archive-text {
+  flex: 1;
+}
+
+.able-archive-text p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.able-archive-text a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.able-archive-text a:hover {
+  opacity: 0.9;
+}
+
+@media only screen and (max-width: 800px) {
+  .able-archive-banner-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .able-archive-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin-top: 0;
+  }
+  
+  .able-archive-text {
+    padding-right: 30px;
+  }
+  
+  .able-archive-text p {
+    font-size: 13px;
+  }
+}
+</style>
+
+<script>
+(function() {
+  var closeBtn = document.querySelector('.able-archive-close-btn');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var banner = document.getElementById('able-archive-banner');
+      if (banner) {
+        banner.style.display = 'none';
+      }
+    });
+  }
+})();
+</script>
+<!-- End ABLE Archive Notice Banner -->
+
 </body>
 </html>
