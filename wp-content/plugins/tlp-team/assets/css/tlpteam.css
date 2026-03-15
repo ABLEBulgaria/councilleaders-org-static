@@ -4981,7 +4981,7 @@ div.rt-team-container .readmore-btn{
 	background-color: #8cc63e; }
 
 .tlp-popup-wrap .tlp-popup-loading {
-	background: url("/wp-content/plugins/tlp-team/assets/images/tlp-loading.gif") no-repeat center;
+	background: url("../images/tlp-loading.gif") no-repeat center;
 	height: 200px; }
 
 .tlp-popup-content {
@@ -5003,7 +5003,7 @@ div.rt-team-container .readmore-btn{
 	bottom: 0; }
 
 .tlp-popup-singlePage .tlp-popup-next {
-	/* background: url("/wp-content/plugins/tlp-team/assets/images/tlp-sprite.png") no-repeat scroll -46px -92px transparent;
+	/* background: url("../images/tlp-sprite.png") no-repeat scroll -46px -92px transparent;
 	right: 0;
 	bottom: 0;
 	left: 108px;  */
@@ -5068,7 +5068,7 @@ div.rt-team-container .readmore-btn{
 
 /******************************* Next Preview  ******************/
 .tlp-popup-singlePage .tlp-popup-prev {
-	/* background: url("/wp-content/plugins/tlp-team/assets/images/tlp-sprite.png") no-repeat scroll 0 -92px transparent; */
+	/* background: url("../images/tlp-sprite.png") no-repeat scroll 0 -92px transparent; */
 	/* left: 0;  */
 }
 
@@ -5077,7 +5077,7 @@ div.rt-team-container .readmore-btn{
 }
 
 .tlp-popup-singlePage .tlp-popup-close {
-	/* background: url("/wp-content/plugins/tlp-team/assets/images/tlp-sprite.png") no-repeat scroll -92px -92px transparent; */
+	/* background: url("../images/tlp-sprite.png") no-repeat scroll -92px -92px transparent; */
 	height: 44px;
 	width: 44px;
 	margin: auto;

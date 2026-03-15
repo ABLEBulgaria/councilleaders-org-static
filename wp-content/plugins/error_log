@@ -1,0 +1,9 @@
+[31-May-2018 23:05:50 Europe/Sofia] PHP Fatal error:  Call to undefined function add_action() in /home/ablebulg/public_html_addons/councilleaders.org/wp-content/plugins/hello.php on line 60
+[17-Sep-2019 19:50:51 Europe/Sofia] PHP Fatal error:  Uncaught Error: Call to undefined function add_action() in /home/ablebulg/public_html_addons/councilleaders.org/wp-content/plugins/hello.php:60
+Stack trace:
+#0 {main}
+  thrown in /home/ablebulg/public_html_addons/councilleaders.org/wp-content/plugins/hello.php on line 60
+[17-Sep-2019 20:42:57 Europe/Sofia] PHP Fatal error:  Uncaught Error: Call to undefined function add_action() in /home/ablebulg/public_html_addons/councilleaders.org/wp-content/plugins/hello.php:60
+Stack trace:
+#0 {main}
+  thrown in /home/ablebulg/public_html_addons/councilleaders.org/wp-content/plugins/hello.php on line 60
